@@ -1,0 +1,22 @@
+<div class="input-group mb-3">
+  <!-- <input type="text"
+    class="form-control"
+    [(ngModel)]="searchText"
+    placeholder="Search here"
+    (input)="updateSearch()"> -->
+  <!-- <div class="input-group-append">
+    <button [ngClass]="{'btn btn-dark btn-lg-50': true, 'btn-disabled': !searchText}" id="basic-addon2"
+      [disabled]="!searchText" (click)="onSearchProductText()">Search</button>
+  </div> -->
+
+  <input type="text" class="form-control" placeholder="Search here" #searchInput>
+  <div class="input-group-append">
+    <button [ngClass]="{'btn btn-dark btn-lg-50': true}" id="basic-addon2" (click)="onSearchProductText(searchInput)">Search</button>
+  </div>
+
+</div>
+<div class="row">
+  <p *ngIf="searchTextSecondMethod != ''">Searching result for:
+    <b>{{searchTextSecondMethod}}</b>
+  </p>
+</div>

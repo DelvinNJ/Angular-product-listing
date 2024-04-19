@@ -1,0 +1,41 @@
+<!-- Two way data binding -->
+
+<!-- <div class="input-group mb-3">
+  <input type="text" class="form-control" [value]="searchText" (input)="updateSearchText($event)">
+  <div class="input-group-append">
+    <button class="btn btn-dark btn-lg-50" id="basic-addon2">Search</button>
+  </div>
+</div>
+<p>Searching result for:
+  <b>{{searchText}}</b>
+</p> -->
+
+<!-- ng model -->
+<div class="row">
+  <div class="d-flex align-items-center justify-content-center">
+    Filter:- &nbsp; &nbsp; &nbsp;
+    <input
+      type="radio"
+      name="stock-filter"
+      value="all"
+      [(ngModel)]="selectedRadioButton"
+      (change)="onSelectedChangeRadioButton()">
+    <label for="">All({{allProducts}})</label> &nbsp; &nbsp;
+
+    <input
+      type="radio"
+      name="stock-filter"
+      value="true"
+      [(ngModel)]="selectedRadioButton"
+      (change)="onSelectedChangeRadioButton()">
+    <label for="">In stock({{inStock}})</label> &nbsp; &nbsp;
+
+    <input
+      type="radio"
+      name="stock-filter"
+      value="false"
+      [(ngModel)]="selectedRadioButton"
+      (change)="onSelectedChangeRadioButton()">
+    <label for="">Out of stock({{outStock}})</label> &nbsp; &nbsp;
+  </div>
+</div>

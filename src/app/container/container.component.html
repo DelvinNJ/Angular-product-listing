@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="session m-3">
+    <div class="row">
+      <div class="text-center h3">
+        {{title | uppercase}}
+      </div>
+    </div>
+    <!-- <div class="row">
+      <span *ngFor="let product_list of productList">
+        {{product_list}}
+      </span>
+    </div> -->
+
+    <!-- <div class="col-lg-4 col-sm-6 mt-3">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]="product.image" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name | titlecase }}</h5>
+            <p class="card-text">{{product.color}}</p>
+            <div class="d-flex align-items-center">
+              <p class="card-text h3">${{ getDiscount().toFixed(2) }}</p>&nbsp;&nbsp;
+              <del>
+                <p class="card-text h6">${{product.price}}</p>
+              </del>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <button class="btn btn-secondary" (click)="onChangeQuantityMinus()"
+                [disabled]="product.min_quantity == 1">-</button>
+              <span class="mx-2">{{product.min_quantity}}</span>
+              <button class="btn btn-secondary" (click)="onChangeQuantityPlus()"
+                [disabled]="product.min_quantity == product.stock">+</button>
+            </div>
+            <button class="btn btn-outline-primary btn-lg btn-block">Add to cart</button>
+          </div>
+        </div>
+      </div> -->
+
+    <product-search (searchProductText)="searchProductText($event)" class="row"></product-search>
+    <product-list [searchText]="searchText" class="row"></product-list>
+
+  </div>
+</div>

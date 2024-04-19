@@ -1,0 +1,10 @@
+<product-filter [allProducts]="allProducts" [inStock]="inStock" [outStock]="outStock"
+  (selectedChangeRadioButton)="selectedValue($event)">
+</product-filter>
+
+<ng-container *ngFor="let product of productList">
+  <!-- *ngIf="selectedRadioButton === 'all' || product.stock_availability.toString() === selectedRadioButton" -->
+  <single-product [product]="product" [ngClass]="{ 'col-lg-4 col-sm-6 mt-3 d-flex justify-content-center' : true }"
+    *ngIf="searchText === '' || product.title.toLowerCase().includes(searchText.toLowerCase())">
+  </single-product>
+</ng-container>
